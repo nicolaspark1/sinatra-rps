@@ -17,16 +17,24 @@ get("/rock") do
   computer = computer_choices.sample
 
   if computer == "rock"
-    result = "We played #{player}! \n They played #{computer}! \n We tied!"  
+    result1 = "We played #{player}!"
+    result2 = "They played #{computer}!"
+    result3 = "We tied!"  
   end
   if computer == "paper"
-    result = "We played #{player}! \n They played #{computer}! \n We lost!"  
+    result1 = "We played #{player}!"
+    result2 = "They played #{computer}!"
+    result3 = "We lost!"  
   end
   if computer == "scissors"
-    result = "We played #{player}! \n They played #{computer}! \n We won!"  
+    result1 = "We played #{player}!"
+    result2 = "They played #{computer}!"
+    result3 = "We won!"  
   end
 
-  @outcome = result
+  @outcome1 = result1
+  @outcome2 = result2
+  @outcome3 = result3
 
   erb(:rock)
 end
@@ -37,16 +45,24 @@ get("/paper") do
   computer = computer_choices.sample
 
   if computer == "paper"
-    result = "We played #{player}! \n They played #{computer}! \n We tied!"  
+    result1 = "We played #{player}!"
+    result2 = "They played #{computer}!"
+    result3 = "We tied!"  
   end
   if computer == "scissors"
-    result = "We played #{player}! \n They played #{computer}! \n We lost!"  
+    result1 = "We played #{player}!"
+    result2 = "They played #{computer}!"
+    result3 = "We lost!"  
   end
   if computer == "rock"
-    result = "We played #{player}! \n They played #{computer}! \n We won!"  
+    result1 = "We played #{player}!"
+    result2 = "They played #{computer}!"
+    result3 = "We won!"  
   end
 
-  @outcome = result
+  @outcome1 = result1
+  @outcome2 = result2
+  @outcome3 = result3
 
   erb(:paper)
 end
@@ -57,15 +73,23 @@ get("/scissors") do
   computer = computer_choices.sample
 
   if computer == "scissors"
-    result = "We played #{player}! \n They played #{computer}! \n We tied!"  
+    result1 = "We played #{player}!"
+    result2 = "They played #{computer}!"
+    result3 = "We tied!"
   end
   if computer == "rock"
-    result = "We played #{player}! \n They played #{computer}! \n We lost!"  
+    result1 = "We played #{player}!"
+    result2 = "They played #{computer}!"
+    result3 = "We lost!"  
   end
   if computer == "paper"
-    result = "We played #{player}! \n They played #{computer}! \n We won!"  
+    result1 = "We played #{player}!"
+    result2 = "They played #{computer}!"
+    result3 = "We won!"  
   end
-  @outcome = result
+  @outcome1 = result1
+  @outcome2 = result2
+  @outcome3 = result3
 
   erb(:scissors)
 end
