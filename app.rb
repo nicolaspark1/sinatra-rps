@@ -8,10 +8,7 @@ BetterErrors.application_root = __dir__
 BetterErrors::Middleware.allow_ip!('0.0.0.0/0.0.0.0')
 
 get("/") do
-  "
-  <h1>Welcome to Rock-Paper-Scissors!</h1>
-  <p>Define some routes in app.rb</p>
-  "
+  erb(:rules)
 end
 
 get("/rock") do
@@ -20,14 +17,18 @@ get("/rock") do
   computer = computer_choices.sample
 
   if computer == "rock"
-    @outcome = "We played #{player}! \n They played #{computer}! \n We tied!"  
+    result = "We played #{player}! \n They played #{computer}! \n We tied!"  
   end
   if computer == "paper"
-    @outcome = "We played #{player}! \n They played #{computer}! \n We lost!"  
+    result = "We played #{player}! \n They played #{computer}! \n We lost!"  
   end
   if computer == "scissors"
-    @outcome = "We played #{player}! \n They played #{computer}! \n We won!"  
+    result = "We played #{player}! \n They played #{computer}! \n We won!"  
   end
+
+  @outcome = result
+
+  erb(:rock)
 end
 
 get("/paper") do
@@ -36,14 +37,18 @@ get("/paper") do
   computer = computer_choices.sample
 
   if computer == "paper"
-    @outcome = "We played #{player}! \n They played #{computer}! \n We tied!"  
+    result = "We played #{player}! \n They played #{computer}! \n We tied!"  
   end
   if computer == "scissors"
-    @outcome = "We played #{player}! \n They played #{computer}! \n We lost!"  
+    result = "We played #{player}! \n They played #{computer}! \n We lost!"  
   end
   if computer == "rock"
-    @outcome = "We played #{player}! \n They played #{computer}! \n We won!"  
+    result = "We played #{player}! \n They played #{computer}! \n We won!"  
   end
+
+  @outcome = result
+
+  erb(:paper)
 end
 
 get("/scissors") do
@@ -52,12 +57,15 @@ get("/scissors") do
   computer = computer_choices.sample
 
   if computer == "scissors"
-    @outcome = "We played #{player}! \n They played #{computer}! \n We tied!"  
+    result = "We played #{player}! \n They played #{computer}! \n We tied!"  
   end
   if computer == "rock"
-    @outcome = "We played #{player}! \n They played #{computer}! \n We lost!"  
+    result = "We played #{player}! \n They played #{computer}! \n We lost!"  
   end
   if computer == "paper"
-    @outcome = "We played #{player}! \n They played #{computer}! \n We won!"  
+    result = "We played #{player}! \n They played #{computer}! \n We won!"  
   end
+  @outcome = result
+
+  erb(:scissors)
 end
